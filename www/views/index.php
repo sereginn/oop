@@ -1,7 +1,7 @@
-?php
+<?php
 require __DIR__ . '/../classes/new.php';
 require __DIR__ . '/../classes/selected.php';
-$listnews=new Selected('oop','root','news','mynews');
+$listnews=new Selected('oop.local','root','news','mynews');
 $listnews->Sql_connect();
 $list=$listnews->Get_all();
 ?>

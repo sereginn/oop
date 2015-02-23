@@ -16,9 +16,3 @@
 
 </body>
 </html>
-/**
- * Created by PhpStorm.
- * User: SERGEY
- * Date: 23.02.2015
- * Time: 23:08
- */
