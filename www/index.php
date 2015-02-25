@@ -1,11 +1,6 @@
 <?php
-require __DIR__ . '/classes/select.php';
-$selected=new Select('root','news','mynews');
-if(empty($_POST)){
-    $type_view='select.php';
-    $selected->type_view=$type_view;
-}
-else{
-    $selected->type_view=$_POST['type_select'].'.php';
-}
-$selected->view();
+require __DIR__ . '/classes/selectionOption.php';
+$selectionoption=new SelectionOption;
+if(empty($_POST))$selectionoption->type_view='/select.php';
+else $selectionoption->type_view=$_POST['type_select'].'.php';
+$selectionoption->view();

@@ -1,10 +1,3 @@
-<?php
-require __DIR__ . '/../classes/new.php';
-require __DIR__ . '/../classes/selected.php';
-$listnews=new Selected('oop.local','root','news','mynews');
-$listnews->Sql_connect();
-$list=$listnews->Get_all();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,14 +8,11 @@ $list=$listnews->Get_all();
 <ol>Новости недели:
     <?php
 
-    foreach ($list as $new):
-        $art=new Article();
-        $art->title=$new['title'];
-        $pagenews='/views/pagenews.php';
-        $art->pagenews=$pagenews;
-        $art->time=$new['time'];
-        $art->view();
-    endforeach;?>
+    foreach ($items as $item):?>
+    <li><a href="../views/pagenews.php"><?php echo $item->title ?></a><br>
+        Создана:
+        <?php echo $item->time ?>
+    </li> <?php endforeach;?>
 </ol>
 <a href="/">Вернуться на главную</a>
 </body>
