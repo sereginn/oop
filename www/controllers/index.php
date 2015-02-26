@@ -1,7 +1,11 @@
-
 <?php
+session_start();
 
-require_once __DIR__ . '/../models/News.php';
-$items=News::Get_all();
-/*var_dump($items);*/
-include __DIR__ . '/../views/index.php' ;
+$contr=$_SESSION['ctrl'];
+$act=$_SESSION['act'];
+
+$ControllerClassName= $contr . 'Controller';
+require_once __DIR__ . '/' . $ControllerClassName . '.php';
+$metod='action'. $act;
+$ControllerClassName ::$metod();
+var_dump($ControllerClassName);

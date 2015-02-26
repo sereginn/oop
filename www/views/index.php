@@ -7,8 +7,9 @@
 <body>
 <ol>Новости недели:
     <?php
-
-    foreach ($items as $item):?>
+    var_dump($items);
+    foreach ($items as $item):
+       ?>
     <li><a href="../views/pagenews.php"><?php echo $item->title ?></a><br>
         Создана:
         <?php echo $item->time ?>
